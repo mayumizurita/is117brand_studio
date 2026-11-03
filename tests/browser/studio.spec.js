@@ -50,6 +50,12 @@ test("keyboard: the skip link reaches main and the size controls work without a 
   await page.keyboard.press("ArrowRight");
   await expect(page.locator('input[name="size"][value="M"]')).toBeChecked();
   await page.keyboard.press("Tab");
+  const sizeGuide = page.getByText("Size guide", { exact: true });
+  await expect(sizeGuide).toBeFocused();
+  await page.keyboard.press("Enter");
+  await expect(page.locator(".size-guide")).toHaveAttribute("open", "");
+  await page.keyboard.press("Enter");
+  await page.keyboard.press("Tab");
   await expect(
     page.getByRole("button", { name: "Add to demo bag", exact: true }),
   ).toBeFocused();

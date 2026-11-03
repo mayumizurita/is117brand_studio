@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Modernist hero exploration for the Cotton Fold brand studio."
+    />
+    <title>Cotton Fold — Modernist hero exploration</title>
+    <style>
+      .modernist {
+        --m-ink: #171818;
+        --m-paper: #f7f6f1;
+        --m-muted: #62645f;
+        --m-rule: #d2d2cb;
+        --m-accent: #ba3b2c;
+        --m-panel: #e8eae1;
+        margin: 0;
+        background: var(--m-paper);
+        color: var(--m-ink);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.5;
+      }
+
+      .modernist * {
+        box-sizing: border-box;
+      }
+
+      .modernist a {
+        color: inherit;
+        text-underline-offset: 0.2em;
+      }
+
+      .modernist a:focus-visible,
+      .modernist input:focus-visible {
+        outline: 3px solid var(--m-accent);
+        outline-offset: 4px;
+      }
+
+      .modernist .masthead,
+      .modernist main,
+      .modernist footer {
+        width: min(100% - 3rem, 1180px);
+        margin-inline: auto;
+      }
+
+      .modernist .masthead {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 76px;
+        border-bottom: 1px solid var(--m-rule);
+      }
+
+      .modernist .brand-name {
+        font-size: 0.92rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .modernist .masthead-note,
+      .modernist .eyebrow,
+      .modernist .product-label,
+      .modernist .size-note {
+        color: var(--m-muted);
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .modernist .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: clamp(2rem, 6vw, 6rem);
+        align-items: center;
+        padding-block: clamp(3.5rem, 8vw, 7rem);
+        border-bottom: 1px solid var(--m-rule);
+      }
+
+      .modernist .hero-copy {
+        max-width: 31rem;
+      }
+
+      .modernist .eyebrow {
+        display: flex;
+        gap: 0.7rem;
+        align-items: center;
+        margin: 0 0 1.4rem;
+      }
+
+      .modernist .eyebrow::before {
+        width: 1.7rem;
+        height: 2px;
+        background: var(--m-accent);
+        content: "";
+      }
+
+      .modernist h1 {
+        max-width: 8ch;
+        margin: 0;
+        font-size: clamp(3rem, 6vw, 5.6rem);
+        font-weight: 700;
+        line-height: 0.98;
+        letter-spacing: -0.07em;
+      }
+
+      .modernist .support {
+        max-width: 26rem;
+        margin: 1.6rem 0 1.8rem;
+        color: var(--m-muted);
+        font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+      }
+
+      .modernist .action {
+        display: inline-flex;
+        min-height: 3.25rem;
+        align-items: center;
+        padding: 0.75rem 1.15rem;
+        background: var(--m-ink);
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .modernist .action:hover {
+        background: var(--m-accent);
+      }
+
+      .modernist .product-stage {
+        position: relative;
+        min-width: 0;
+        padding: clamp(1rem, 3vw, 2rem);
+        background: var(--m-panel);
+      }
+
+      .modernist .product-label {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid #c9cbc3;
+      }
+
+      .modernist .shirt {
+        width: min(100%, 28rem);
+        margin: 0 auto;
+      }
+
+      .modernist .size-panel {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem 2rem;
+        align-items: center;
+        padding-block: 1.4rem;
+        border-bottom: 1px solid var(--m-rule);
+      }
+
+      .modernist .size-panel h2 {
+        margin: 0 auto 0 0;
+        font-size: 1rem;
+      }
+
+      .modernist fieldset {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+
+      .modernist legend {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+      }
+
+      .modernist .size-option {
+        display: inline-flex;
+        min-width: 2.8rem;
+        min-height: 2.8rem;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--m-rule);
+        cursor: pointer;
+        font-weight: 700;
+      }
+
+      .modernist .size-option:has(input:checked) {
+        border-color: var(--m-ink);
+        background: var(--m-ink);
+        color: #fff;
+      }
+
+      .modernist .size-option:has(input:focus-visible) {
+        outline: 3px solid var(--m-accent);
+        outline-offset: 3px;
+      }
+
+      .modernist .size-option input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+      }
+
+      .modernist .annotation {
+        display: grid;
+        grid-template-columns: 0.65fr 1.35fr;
+        gap: 1rem 3rem;
+        padding-block: 2rem 3rem;
+      }
+
+      .modernist .annotation h2 {
+        margin: 0;
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .modernist .annotation p {
+        max-width: 54rem;
+        margin: 0 0 0.75rem;
+      }
+
+      .modernist .annotation .risk {
+        color: var(--m-muted);
+      }
+
+      .modernist footer {
+        padding-block: 1rem 2rem;
+        border-top: 1px solid var(--m-rule);
+        color: var(--m-muted);
+        font-size: 0.8rem;
+      }
+
+      @media (max-width: 640px) {
+        .modernist .masthead,
+        .modernist main,
+        .modernist footer {
+          width: min(100% - 2rem, 1180px);
+        }
+
+        .modernist .masthead {
+          min-height: 62px;
+        }
+
+        .modernist .masthead-note {
+          font-size: 0.62rem;
+        }
+
+        .modernist .hero {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          padding-block: 3rem;
+        }
+
+        .modernist h1 {
+          max-width: 10ch;
+          font-size: clamp(3.1rem, 14vw, 4.5rem);
+        }
+
+        .modernist .product-stage {
+          padding: 0.75rem;
+        }
+
+        .modernist .annotation {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+      }
+
+      /* Revised Cotton Fold treatment: quiet editorial typography and a soft arch. */
+      .modernist {
+        --m-paper: #f5f0e8;
+        --m-panel: #e7dfd2;
+        --m-ink: #35372f;
+        --m-muted: #777466;
+        --m-accent: #9a765f;
+        font-family: Georgia, "Times New Roman", serif;
+      }
+      .modernist .masthead {
+        border: 0;
+        min-height: 88px;
+      }
+      .modernist .brand-name {
+        font-family: "Trebuchet MS", sans-serif;
+        text-transform: none;
+        letter-spacing: 0.01em;
+        font-size: 1.1rem;
+      }
+      .modernist .masthead-note,
+      .modernist .eyebrow,
+      .modernist .product-label,
+      .modernist .size-note {
+        font-family: "Trebuchet MS", sans-serif;
+        letter-spacing: 0.04em;
+        text-transform: none;
+      }
+      .modernist .hero {
+        grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+        gap: clamp(2rem, 7vw, 7rem);
+        border: 0;
+      }
+      .modernist .eyebrow::before {
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 50%;
+      }
+      .modernist h1 {
+        max-width: 9ch;
+        font-size: clamp(3.5rem, 6.8vw, 6rem);
+        font-weight: 400;
+        line-height: 1.03;
+        letter-spacing: -0.055em;
+      }
+      .modernist .support {
+        font-size: clamp(1.12rem, 1.6vw, 1.35rem);
+        line-height: 1.65;
+      }
+      .modernist .action {
+        border-radius: 999px;
+        background: var(--m-accent);
+        font-family: "Trebuchet MS", sans-serif;
+        font-weight: 600;
+      }
+      .modernist .product-stage {
+        padding: clamp(1.5rem, 4vw, 3rem);
+        border-radius: 48% 48% 1.2rem 1.2rem;
+      }
+      .modernist .product-label {
+        border: 0;
+      }
+      .modernist .shirt {
+        display: block;
+      }
+      .modernist .size-panel {
+        border: 0;
+        border-top: 1px solid var(--m-rule);
+      }
+    </style>
+  </head>
+  <body class="modernist">
+    <header class="masthead">
+      <a class="brand-name" href="index.html">Cotton Fold</a>
+      <span class="masthead-note">Brand study / 001</span>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">A white tee / everyday study</p>
+          <h1 id="hero-title">Plain white, made for every day</h1>
+          <p class="support">
+            A simple white tee for easy days and quick mornings
+          </p>
+          <a class="action" href="#choose-size">Choose your size</a>
+        </div>
+        <figure class="product-stage">
+          <figcaption class="product-label">
+            <span>White T-shirt</span><span>Product / 001</span>
+          </figcaption>
+          <img
+            class="shirt"
+            src="../../assets/white-shirt.svg"
+            alt="Plain white unbranded T-shirt"
+            width="800"
+            height="880"
+          />
+        </figure>
+      </section>
+      <section id="choose-size" class="size-panel" aria-labelledby="size-title">
+        <h2 id="size-title">Choose a size</h2>
+        <fieldset>
+          <legend>Demo size options</legend>
+          <label class="size-option"
+            ><input type="radio" name="size" value="S" />S</label
+          >
+          <label class="size-option"
+            ><input type="radio" name="size" value="M" />M</label
+          >
+          <label class="size-option"
+            ><input type="radio" name="size" value="L" />L</label
+          >
+          <label class="size-option"
+            ><input type="radio" name="size" value="XL" />XL</label
+          >
+        </fieldset>
+        <span class="size-note">Preview only / no order or checkout</span>
+      </section>
+      <section class="annotation" aria-labelledby="notes-title">
+        <h2 id="notes-title">Modernist direction</h2>
+        <div>
+          <p>
+            <strong>Reference:</strong> Josef Müller-Brockmann,
+            <em>Der Film</em>, 1960, offset lithograph, MoMA collection.
+            <a
+              href="https://www.moma.org/collection/works/4882"
+              target="_blank"
+              rel="noreferrer"
+              >View the work at MoMA</a
+            >.
+          </p>
+          <p>
+            <strong>Design choices:</strong> A fixed two-column grid separates
+            message from product; a large plain sans-serif headline leads into
+            one high-contrast action; restrained ink, paper, and red details
+            echo the reference’s disciplined hierarchy and economical color use.
+          </p>
+          <p>
+            <strong>Intended effect (hypothesis):</strong> The calm typography
+            and clear sequence may make an everyday choice feel gentle and easy
+            to scan.
+          </p>
+          <p class="risk">
+            <strong>Risk:</strong> The stark contrast and rigid grid may feel
+            formal beside Cotton Fold’s gentle voice.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      Design study only. The layout is an original interpretation, not a
+      reproduction.
+    </footer>
+  </body>
+</html>

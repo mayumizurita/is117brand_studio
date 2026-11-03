@@ -5,42 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="An unfinished, neutral T-shirt storefront for the IS117 Brand Studio. Build a brand through deliberate, visible design choices."
+      content="Cotton Fold is an everyday white T-shirt brand concept, with a gentle and youthful point of view."
     />
-    <title>Your Brand — neutral storefront starter</title>
+    <title>Cotton Fold - Easy, from the start</title>
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="styles.css" />
     <script src="shop.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <aside class="starter-notice" aria-label="Starter information">
-      <span
-        ><strong>Unfinished by design.</strong> This is a neutral teaching
-        starter. Replace its identity after your brand decisions.</span
-      >
-      <a href="studio.html"
-        >Enter the studio <span aria-hidden="true">↗</span></a
+    <aside class="starter-notice" aria-label="Brand note">
+      <span><strong>Cotton Fold.</strong> Easy, from the start.</span>
+      <a href="styleguide.html"
+        >Style guide <span aria-hidden="true">↗</span></a
       >
     </aside>
     <header class="site-header wrap">
       <a
         class="brand-link"
         href="index.html"
-        aria-label="Your Brand storefront home"
+        aria-label="Cotton Fold storefront home"
         ><img
           class="wordmark"
-          src="assets/wordmark.svg"
-          alt="Neutral starter wordmark"
+          src="assets/cotton-fold-logo.svg"
+          alt="Cotton Fold"
           width="175"
           height="26"
       /></a>
       <nav class="main-nav" aria-label="Main navigation">
         <a class="nav-link" href="index.html" aria-current="page">Shop</a>
         <a class="nav-link" href="styleguide.html">Style guide</a>
-        <a class="nav-link" href="studio.html"
-          >Studio <span aria-hidden="true">↗</span></a
-        >
       </nav>
       <a class="bag-link" href="#demo-bag" aria-label="View demo bag"
         >Demo bag <span id="bag-count" class="bag-count">0</span></a
@@ -51,7 +45,7 @@
       <section class="product-section wrap" aria-labelledby="product-title">
         <div class="product-visual">
           <div class="visual-label">
-            <span>001 / The starting point</span><span>Unbranded</span>
+            <span>001 / Cotton Fold</span><span>White tee / demo</span>
           </div>
           <img
             class="shirt-image"
@@ -62,26 +56,30 @@
             fetchpriority="high"
           />
           <div class="image-caption">
-            <span>One product. Room for your point of view.</span
+            <span>A white tee for easy days.</span
             ><span aria-hidden="true">↙</span>
           </div>
         </div>
         <div class="product-information">
           <p class="eyebrow">
-            <span class="status-dot" aria-hidden="true"></span> Neutral product
-            / demo only
+            <span class="status-dot" aria-hidden="true"></span> Cotton Fold /
+            demo concept
           </p>
-          <h1 id="product-title">The white<br />T-shirt.</h1>
-          <p class="product-intro">A plain shirt. A place to begin.</p>
+          <h1 id="product-title">Plain white,<br />made for every day</h1>
+          <p class="product-intro">Easy, from the start.</p>
           <p class="muted product-description">
-            This starter has a working product page and room for a brand. Its
-            audience, personality, message, and visual direction are still yours
-            to decide.
+            A simple white tee for easy days and quick mornings.
           </p>
           <div class="price-row">
             <p class="price">$28 <span>USD</span></p>
             <span class="micro-label">Fictional demo price</span>
           </div>
+          <a
+            class="button button-secondary choose-size-button"
+            href="#product-form"
+          >
+            Choose your size <span aria-hidden="true">&#8595;</span>
+          </a>
           <form id="product-form" class="product-form" novalidate>
             <fieldset aria-describedby="size-help size-error">
               <legend>Choose a size</legend>
@@ -114,6 +112,29 @@
                 Choose a size before adding the shirt to your demo bag.
               </p>
             </fieldset>
+            <details class="size-guide">
+              <summary>Size guide</summary>
+              <div class="size-guide-content">
+                <p>
+                  Compare a T-shirt you already like with the garment
+                  measurements when those are available.
+                </p>
+                <ol>
+                  <li>Lay a similar T-shirt flat on a level surface.</li>
+                  <li>
+                    Measure across the chest from underarm seam to underarm
+                    seam, then from the top of the shoulder to the bottom hem.
+                  </li>
+                  <li>
+                    Compare those measurements with the product size chart.
+                  </li>
+                </ol>
+                <p class="size-guide-note">
+                  This demo has no garment measurements, so its S, M, L, and XL
+                  choices cannot confirm fit or recommend a size.
+                </p>
+              </div>
+            </details>
             <button class="button button-primary add-button" type="submit">
               Add to demo bag <span aria-hidden="true">↗</span>
             </button>
@@ -128,12 +149,12 @@
               <dd>White</dd>
             </div>
             <div>
-              <dt>Brand identity</dt>
-              <dd>Not decided yet</dd>
+              <dt>Brand</dt>
+              <dd>Cotton Fold</dd>
             </div>
             <div>
-              <dt>Product claims</dt>
-              <dd>None supplied</dd>
+              <dt>Fabric details</dt>
+              <dd>Not supplied</dd>
             </div>
           </dl>
         </div>
@@ -167,29 +188,11 @@
           </p>
         </div>
       </section>
-
-      <section class="starter-next wrap" aria-labelledby="next-title">
-        <p class="eyebrow">For the person building this site</p>
-        <h2 id="next-title">The shirt stays.<br />The story is your work.</h2>
-        <div>
-          <p>
-            Choose who this is for, decide what the brand should express, and
-            make those choices visible. Keep the storefront and its
-            <a href="styleguide.html">live style guide</a> in sync.
-          </p>
-          <a class="button button-secondary" href="studio.html"
-            >See the studio brief <span aria-hidden="true">↗</span></a
-          >
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer wrap">
-      <p>
-        IS117 Brand Studio <span class="footer-separator"> / </span> Neutral
-        starter
-      </p>
-      <p class="footer-tagline">Fictional product. Real design decisions.</p>
+      <p>Cotton Fold <span class="footer-separator"> / </span> Brand concept</p>
+      <p class="footer-tagline">A gentle start to an everyday look.</p>
       <a href="https://github.com/kaw393939/is117-brand-studio#readme"
         >Project README <span aria-hidden="true">↗</span></a
       >

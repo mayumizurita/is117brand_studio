@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 64" role="img" aria-labelledby="title">
+  <title id="title">Cotton Fold</title>
+  <g fill="none" stroke="#403847" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+    <path d="M8 18a5 5 0 0 1 5-5h23l12 12v21a5 5 0 0 1-5 5H13a5 5 0 0 1-5-5z" />
+    <path d="M36 13v9a3 3 0 0 0 3 3h9M15 34c6-5 12-5 18 0s12 5 15 2" />
+  </g>
+  <text x="62" y="43" fill="#403847" font-family="Georgia, 'Times New Roman', serif" font-size="34" letter-spacing="-1.1">Cotton Fold</text>
+</svg>

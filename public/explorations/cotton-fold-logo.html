@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Cotton Fold wordmark draft for review." />
+    <title>Cotton Fold / Logo draft</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #fffaf3;
+        color: #403847;
+        font:
+          16px/1.55 system-ui,
+          sans-serif;
+      }
+      main {
+        width: min(100% - 2rem, 880px);
+        margin: 0 auto;
+        padding-block: clamp(2rem, 7vw, 5rem);
+      }
+      h1 {
+        margin: 0;
+        font:
+          400 clamp(2.5rem, 7vw, 4rem)/1.05 Georgia,
+          "Times New Roman",
+          serif;
+        letter-spacing: -0.05em;
+      }
+      .intro {
+        max-width: 42rem;
+        color: #62596a;
+      }
+      .sample {
+        margin-top: 2rem;
+        padding: clamp(1.2rem, 4vw, 2.5rem);
+        border: 1px solid #ded6e3;
+        border-radius: 1.5rem;
+        background: #f3e9df;
+      }
+      .sample h2 {
+        margin: 0 0 1.4rem;
+        font-size: 0.75rem;
+        font-weight: 650;
+        letter-spacing: 0.04em;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        min-height: 4.5rem;
+        padding: 0.7rem 1rem;
+        border-radius: 0.8rem;
+        background: #fffaf3;
+      }
+      .nav img {
+        width: 175px;
+        height: auto;
+      }
+      .nav span {
+        font-size: 0.76rem;
+      }
+      .variants {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      .variant {
+        display: grid;
+        min-height: 150px;
+        align-content: space-between;
+        gap: 1.2rem;
+        padding: 1.2rem;
+        border-radius: 0.8rem;
+        background: #fffaf3;
+      }
+      .variant img {
+        width: 110px;
+      }
+      .variant p {
+        margin: 0;
+        color: #62596a;
+        font-size: 0.75rem;
+      }
+      .mono {
+        background: #403847;
+      }
+      .mono img {
+        filter: brightness(0) invert(1);
+      }
+      .mono p {
+        color: #fffaf3;
+      }
+      .note {
+        max-width: 44rem;
+        margin-top: 1.5rem;
+        color: #62596a;
+        font-size: 0.84rem;
+      }
+      @media (max-width: 520px) {
+        .variants {
+          grid-template-columns: 1fr;
+        }
+        .nav {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="intro">BRAND-001 / first logo draft</p>
+      <h1>A gentle fold, in one line.</h1>
+      <p class="intro">
+        A soft-cornered folded label pairs with a calm serif wordmark. The mark
+        uses one ink color, so the same original SVG can work at navigation size
+        and in a one-color setting.
+      </p>
+      <section class="sample" aria-labelledby="nav-title">
+        <h2 id="nav-title">Navigation-size preview · 175px wordmark</h2>
+        <div class="nav">
+          <img src="../assets/cotton-fold-logo.svg" alt="Cotton Fold" /><span
+            >Shop · Style guide · Bag</span
+          >
+        </div>
+      </section>
+      <section class="variants" aria-label="Logo size and color examples">
+        <section class="variant">
+          <img
+            src="../assets/cotton-fold-logo.svg"
+            alt="Cotton Fold logo at small size"
+          />
+          <p>Small-size check · 110px wide · single ink color</p>
+        </section>
+        <section class="variant mono">
+          <img
+            src="../assets/cotton-fold-logo.svg"
+            alt="Cotton Fold logo shown in one color"
+          />
+          <p>One-color check · white logo on deep plum</p>
+        </section>
+      </section>
+      <p class="note">
+        Draft for review only. It has not been applied to the storefront or live
+        style guide yet.
+      </p>
+    </main>
+  </body>
+</html>
