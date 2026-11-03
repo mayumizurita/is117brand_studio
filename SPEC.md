@@ -8,8 +8,8 @@ This is the durable agreement between the learner and agent. Keep it concise and
 
 - Stage: BRAND-001 storefront, live guide, size guide, and two ethical applications implemented; review and merge decision pending.
 - Current feature: `BRAND-001` — first branded storefront and live style guide.
-- Status: In progress on `feature/brand-001-storefront-styleguide`; learner reports issue #1 is open.
-- Next small decision: Review the prepared project check results.
+- Status: Commit `ba4f256` is local on `feature/brand-001-storefront-styleguide`; learner reports issue #1 is open. Push and PR are pending SSH write access.
+- Next small action: Restore SSH write access, then push the feature branch and open its PR.
 
 ## Product boundary
 
