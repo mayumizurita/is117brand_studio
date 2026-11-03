@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Side-by-side Cotton Fold hero explorations."
+    />
+    <title>Cotton Fold — Compare hero directions</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #252525;
+        background: #eeece6;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0.75rem 1.5rem;
+        align-items: baseline;
+        padding: 1rem 1.25rem;
+        background: #fff;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 1.15rem;
+      }
+
+      header p {
+        margin: 0;
+        color: #555;
+        font-size: 0.9rem;
+      }
+
+      nav {
+        display: flex;
+        gap: 1rem;
+      }
+
+      a {
+        color: #222;
+        text-underline-offset: 0.2em;
+      }
+
+      a:focus-visible {
+        outline: 3px solid #283d91;
+        outline-offset: 3px;
+      }
+
+      .pair {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      figure {
+        min-width: 0;
+        margin: 0;
+      }
+
+      figcaption {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.5rem;
+        padding: 0.65rem 0.75rem;
+        background: #fff;
+        font-size: 0.85rem;
+        font-weight: 700;
+      }
+
+      iframe {
+        display: block;
+        width: 100%;
+        height: min(84vh, 900px);
+        min-height: 620px;
+        border: 1px solid #bbb;
+        background: #fff;
+      }
+
+      @media (max-width: 800px) {
+        .pair {
+          grid-template-columns: 1fr;
+        }
+
+        iframe {
+          height: 760px;
+          min-height: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Cotton Fold / Hero direction comparison</h1>
+        <p>Same white T-shirt and hero copy; compare the visual treatment.</p>
+      </div>
+      <nav aria-label="Full previews">
+        <a href="modernist.html">Modernist full preview</a>
+        <a href="postmodernist.html">Postmodernist full preview</a>
+      </nav>
+    </header>
+    <main class="pair">
+      <figure>
+        <figcaption>
+          <span>Modernist</span
+          ><a href="modernist.html">View the full preview ↗</a>
+        </figcaption>
+        <iframe src="modernist.html" title="Modernist hero preview"></iframe>
+      </figure>
+      <figure>
+        <figcaption>
+          <span>Postmodernist</span
+          ><a href="postmodernist.html">View the full preview ↗</a>
+        </figcaption>
+        <iframe
+          src="postmodernist.html"
+          title="Postmodernist hero preview"
+        ></iframe>
+      </figure>
+    </main>
+  </body>
+</html>

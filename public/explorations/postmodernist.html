@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Postmodernist hero exploration for the Cotton Fold brand studio."
+    />
+    <title>Cotton Fold — Postmodernist hero exploration</title>
+    <style>
+      .postmodernist {
+        --p-ink: #25202a;
+        --p-paper: #fff8ed;
+        --p-muted: #5e5864;
+        --p-coral: #e65740;
+        --p-cyan: #62c9c9;
+        --p-yellow: #f4d84e;
+        --p-lilac: #aaa0d9;
+        margin: 0;
+        background: var(--p-paper);
+        color: var(--p-ink);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.5;
+      }
+
+      .postmodernist * {
+        box-sizing: border-box;
+      }
+
+      .postmodernist a {
+        color: inherit;
+        text-underline-offset: 0.2em;
+      }
+
+      .postmodernist a:focus-visible,
+      .postmodernist input:focus-visible {
+        outline: 3px solid var(--p-ink);
+        outline-offset: 4px;
+      }
+
+      .postmodernist .masthead,
+      .postmodernist main,
+      .postmodernist footer {
+        width: min(100% - 3rem, 1180px);
+        margin-inline: auto;
+      }
+
+      .postmodernist .masthead {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 76px;
+        border-bottom: 2px solid var(--p-ink);
+      }
+
+      .postmodernist .brand-name {
+        font-size: 0.92rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .postmodernist .masthead-note,
+      .postmodernist .eyebrow,
+      .postmodernist .product-label,
+      .postmodernist .size-note {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+
+      .postmodernist .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+        gap: clamp(2rem, 5vw, 5rem);
+        align-items: center;
+        padding-block: clamp(3.5rem, 8vw, 7rem);
+      }
+
+      .postmodernist .hero-copy {
+        position: relative;
+        z-index: 1;
+        max-width: 34rem;
+      }
+
+      .postmodernist .eyebrow {
+        display: inline-block;
+        margin: 0 0 1.25rem;
+        padding: 0.35rem 0.6rem;
+        transform: rotate(-2deg);
+        background: var(--p-yellow);
+      }
+
+      .postmodernist h1 {
+        max-width: 8ch;
+        margin: 0;
+        font-size: clamp(3rem, 6vw, 5.5rem);
+        font-weight: 800;
+        line-height: 0.99;
+        letter-spacing: -0.07em;
+        text-shadow:
+          4px 3px 0 var(--p-coral),
+          -2px -1px 0 var(--p-cyan);
+      }
+
+      .postmodernist .support {
+        max-width: 26rem;
+        margin: 1.6rem 0 1.8rem;
+        color: var(--p-muted);
+        font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+      }
+
+      .postmodernist .action {
+        display: inline-flex;
+        min-height: 3.25rem;
+        align-items: center;
+        padding: 0.75rem 1.15rem;
+        border: 2px solid var(--p-ink);
+        border-radius: 999px;
+        background: var(--p-cyan);
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 4px 4px 0 var(--p-ink);
+      }
+
+      .postmodernist .action:hover {
+        transform: translate(2px, 2px);
+        box-shadow: 2px 2px 0 var(--p-ink);
+      }
+
+      .postmodernist .product-stage {
+        position: relative;
+        min-width: 0;
+        padding: clamp(1rem, 3vw, 2rem);
+        isolation: isolate;
+      }
+
+      .postmodernist .product-stage::before,
+      .postmodernist .product-stage::after {
+        position: absolute;
+        z-index: -1;
+        content: "";
+      }
+
+      .postmodernist .product-stage::before {
+        inset: 5% 7% 10% 4%;
+        transform: rotate(-5deg);
+        background: var(--p-cyan);
+      }
+
+      .postmodernist .product-stage::after {
+        inset: 12% 3% 4% 12%;
+        transform: rotate(4deg);
+        background: var(--p-coral);
+      }
+
+      .postmodernist .product-label {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.6rem 0.75rem;
+        border: 2px solid var(--p-ink);
+        background: var(--p-yellow);
+      }
+
+      .postmodernist .shirt {
+        width: min(100%, 28rem);
+        margin: 0 auto;
+        border: 2px solid var(--p-ink);
+      }
+
+      .postmodernist .size-panel {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem 2rem;
+        align-items: center;
+        padding-block: 1.4rem;
+        border-top: 2px solid var(--p-ink);
+        border-bottom: 2px solid var(--p-ink);
+      }
+
+      .postmodernist .size-panel h2 {
+        margin: 0 auto 0 0;
+        font-size: 1rem;
+      }
+
+      .postmodernist fieldset {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+
+      .postmodernist legend {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+      }
+
+      .postmodernist .size-option {
+        display: inline-flex;
+        min-width: 2.8rem;
+        min-height: 2.8rem;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid var(--p-ink);
+        border-radius: 50%;
+        background: #fff;
+        cursor: pointer;
+        font-weight: 700;
+      }
+
+      .postmodernist .size-option:has(input:checked) {
+        background: var(--p-yellow);
+      }
+
+      .postmodernist .size-option:has(input:focus-visible) {
+        outline: 3px solid var(--p-ink);
+        outline-offset: 3px;
+      }
+
+      .postmodernist .size-option input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+      }
+
+      .postmodernist .annotation {
+        display: grid;
+        grid-template-columns: 0.65fr 1.35fr;
+        gap: 1rem 3rem;
+        padding-block: 2rem 3rem;
+      }
+
+      .postmodernist .annotation h2 {
+        margin: 0;
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .postmodernist .annotation p {
+        max-width: 54rem;
+        margin: 0 0 0.75rem;
+      }
+
+      .postmodernist .annotation .risk {
+        color: var(--p-muted);
+      }
+
+      .postmodernist footer {
+        padding-block: 1rem 2rem;
+        border-top: 2px solid var(--p-ink);
+        color: var(--p-muted);
+        font-size: 0.8rem;
+      }
+
+      @media (max-width: 640px) {
+        .postmodernist .masthead,
+        .postmodernist main,
+        .postmodernist footer {
+          width: min(100% - 2rem, 1180px);
+        }
+
+        .postmodernist .masthead {
+          min-height: 62px;
+        }
+
+        .postmodernist .masthead-note {
+          font-size: 0.62rem;
+        }
+
+        .postmodernist .hero {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          padding-block: 3rem;
+        }
+
+        .postmodernist h1 {
+          max-width: 10ch;
+          font-size: clamp(3.1rem, 14vw, 4.5rem);
+        }
+
+        .postmodernist .annotation {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+      }
+
+      /* Revised Cotton Fold treatment: youthful collage, bouncing type, and soft color blocks. */
+      .postmodernist {
+        --p-ink: #3d3541;
+        --p-paper: #fffaf3;
+        --p-muted: #62596a;
+        --p-coral: #f1a58f;
+        --p-cyan: #b8ded3;
+        --p-yellow: #f5d987;
+        --p-lilac: #c9b9e2;
+        font-family: "Trebuchet MS", Arial, sans-serif;
+      }
+      .postmodernist .masthead {
+        border: 0;
+        min-height: 88px;
+      }
+      .postmodernist .brand-name {
+        text-transform: none;
+        letter-spacing: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.15rem;
+      }
+      .postmodernist .masthead-note,
+      .postmodernist .eyebrow,
+      .postmodernist .product-label,
+      .postmodernist .size-note {
+        letter-spacing: 0.03em;
+        text-transform: none;
+      }
+      .postmodernist .hero {
+        position: relative;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: clamp(1.5rem, 4vw, 4rem);
+        padding: clamp(2.5rem, 6vw, 5rem) clamp(1rem, 3vw, 2.5rem);
+        border-radius: 2.5rem;
+        background: linear-gradient(
+          135deg,
+          #f8e8dd 0 44%,
+          #e8e1f0 44% 72%,
+          #dcece4 72%
+        );
+      }
+      .postmodernist .hero-copy {
+        padding: clamp(1rem, 3vw, 2rem);
+      }
+      .postmodernist .eyebrow {
+        border-radius: 999px;
+        transform: rotate(-3deg);
+        background: #fffaf3;
+      }
+      .postmodernist h1 {
+        max-width: 9ch;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(3rem, 5.8vw, 5.3rem);
+        font-weight: 400;
+        line-height: 1.03;
+        letter-spacing: -0.06em;
+        text-shadow: 3px 3px 0 #f1a58f;
+      }
+      .postmodernist .support {
+        font-size: clamp(1.05rem, 1.5vw, 1.22rem);
+      }
+      .postmodernist .action {
+        border: 0;
+        background: var(--p-ink);
+        color: white;
+        box-shadow: 5px 5px 0 var(--p-yellow);
+      }
+      .postmodernist .action:hover {
+        background: #62596a;
+      }
+      .postmodernist .product-stage {
+        transform: rotate(2deg);
+        padding: 1rem;
+        border-radius: 1.5rem 0.4rem 1.5rem 0.4rem;
+        background: #fffaf3;
+        box-shadow: 12px 12px 0 var(--p-cyan);
+      }
+      .postmodernist .product-label {
+        border: 0;
+        background: transparent;
+      }
+      .postmodernist .shirt {
+        border: 0;
+      }
+      .postmodernist .size-panel {
+        margin-top: 1.5rem;
+        padding-inline: 1rem;
+        border: 0;
+        border-radius: 1.5rem;
+        background: #f4ead9;
+      }
+      .postmodernist .size-option {
+        border: 1px solid var(--p-ink);
+      }
+      @media (max-width: 640px) {
+        .postmodernist .hero {
+          padding: 1.5rem 1rem;
+          border-radius: 1.5rem;
+        }
+        .postmodernist .product-stage {
+          transform: rotate(1deg);
+        }
+      }
+    </style>
+  </head>
+  <body class="postmodernist">
+    <header class="masthead">
+      <a class="brand-name" href="index.html">Cotton Fold</a>
+      <span class="masthead-note">Brand study / 001</span>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">A white tee / everyday study</p>
+          <h1 id="hero-title">Plain white, made for every day</h1>
+          <p class="support">
+            A simple white tee for easy days and quick mornings
+          </p>
+          <a class="action" href="#choose-size">Choose your size</a>
+        </div>
+        <figure class="product-stage">
+          <figcaption class="product-label">
+            <span>White T-shirt</span><span>Product / 001</span>
+          </figcaption>
+          <img
+            class="shirt"
+            src="../../assets/white-shirt.svg"
+            alt="Plain white unbranded T-shirt"
+            width="800"
+            height="880"
+          />
+        </figure>
+      </section>
+      <section id="choose-size" class="size-panel" aria-labelledby="size-title">
+        <h2 id="size-title">Choose a size</h2>
+        <fieldset>
+          <legend>Demo size options</legend>
+          <label class="size-option"
+            ><input type="radio" name="size" value="S" />S</label
+          >
+          <label class="size-option"
+            ><input type="radio" name="size" value="M" />M</label
+          >
+          <label class="size-option"
+            ><input type="radio" name="size" value="L" />L</label
+          >
+          <label class="size-option"
+            ><input type="radio" name="size" value="XL" />XL</label
+          >
+        </fieldset>
+        <span class="size-note">Preview only / no order or checkout</span>
+      </section>
+      <section class="annotation" aria-labelledby="notes-title">
+        <h2 id="notes-title">Postmodernist direction</h2>
+        <div>
+          <p>
+            <strong>Reference:</strong> April Greiman,
+            <em>Your Turn, My Turn</em>, 1983, offset lithograph and
+            screenprint, Cooper Hewitt, Smithsonian Design Museum.
+            <a
+              href="https://www.cooperhewitt.org/2017/08/30/26363/"
+              target="_blank"
+              rel="noreferrer"
+              >View the work at Cooper Hewitt</a
+            >.
+          </p>
+          <p>
+            <strong>Design choices:</strong> Offset color shadows, rotated
+            labels, and overlapping geometric planes reinterpret the reference’s
+            layered lettering, halftone texture, and angled shapes. The headline
+            stays on a clear ground, and the size action keeps a solid outline
+            for legibility.
+          </p>
+          <p>
+            <strong>Intended effect (hypothesis):</strong> A youthful collage
+            may make the plain tee feel more expressive while retaining a soft
+            mood.
+          </p>
+          <p class="risk">
+            <strong>Risk:</strong> The layered pastel composition may feel busy
+            beside the effortless voice or distract from size selection.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      Design study only. The layout is an original interpretation, not a
+      reproduction.
+    </footer>
+  </body>
+</html>

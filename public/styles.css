@@ -1,18 +1,21 @@
 /* Shared brand tokens. Change these after you agree on your brand direction.
    Both the storefront and the live style guide use this file. */
 :root {
-  --color-paper: #f6f5f0;
-  --color-ink: #171a18;
-  --color-muted: #5a615b;
-  --color-line: #d1d5cc;
-  --color-accent: #e3ef56;
-  --color-soft: #e8eae1;
+  --color-paper: #fffaf3;
+  --color-ink: #403847;
+  --color-muted: #62596a;
+  --color-line: #ded6e3;
+  --color-accent: #f5d987;
+  --color-soft: #f3e9df;
   --color-white: #fff;
-  --color-danger: #992e28;
-  --font-body:
-    system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", sans-serif;
-  --font-display:
-    system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", sans-serif;
+  --color-danger: #922f3b;
+  --color-coral: #f1a58f;
+  --color-mint: #b8ded3;
+  --color-lilac: #c9b9e2;
+  --color-blush: #f8e8dd;
+  --color-sage: #dcece4;
+  --font-body: "Trebuchet MS", arial, sans-serif;
+  --font-display: georgia, "Times New Roman", serif;
   --font-mono: ui-monospace, sfmono-regular, consolas, monospace;
   --space-1: 0.5rem;
   --space-2: 1rem;
@@ -106,12 +109,14 @@ h3 {
 
 h1 {
   font-size: clamp(3.4rem, 6.25vw, 6.6rem);
+  font-weight: 400;
   line-height: 0.99;
   letter-spacing: -0.075em;
 }
 
 h2 {
   font-size: clamp(2rem, 3.6vw, 3.75rem);
+  font-weight: 400;
   line-height: 1.08;
   letter-spacing: -0.055em;
 }
@@ -181,6 +186,7 @@ p + p {
 
 .starter-notice {
   display: flex;
+  color: var(--color-ink);
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
@@ -209,7 +215,7 @@ p + p {
 }
 
 .wordmark {
-  width: 150px;
+  width: 175px;
   height: auto;
 }
 
@@ -264,7 +270,14 @@ p + p {
 
 .product-visual {
   position: relative;
-  background: var(--color-soft);
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background: linear-gradient(
+    135deg,
+    var(--color-blush) 0 45%,
+    var(--color-lilac) 45% 72%,
+    var(--color-sage) 72%
+  );
 }
 
 .visual-label {
@@ -278,9 +291,14 @@ p + p {
 }
 
 .shirt-image {
-  width: 100%;
+  width: 84%;
   height: auto;
+  margin: 2.8rem auto 1rem;
   aspect-ratio: 800 / 880;
+  transform: rotate(1deg);
+  border-radius: 1rem;
+  background: var(--color-paper);
+  box-shadow: 10px 10px 0 var(--color-mint);
   object-fit: contain;
 }
 
@@ -301,16 +319,23 @@ p + p {
 }
 
 .product-information {
-  max-width: 530px;
+  max-width: 570px;
   padding-block: 1rem;
 }
 
 .product-information h1 {
+  max-width: 11ch;
   margin-top: 1.6rem;
+  font-size: clamp(3.2rem, 5.2vw, 5rem);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.06em;
 }
 
 .product-intro {
+  font-family: var(--font-body);
   font-size: 1.2rem;
+  font-weight: 650;
   line-height: 1.5;
   margin-top: 1.8rem;
   letter-spacing: -0.025em;
@@ -318,7 +343,9 @@ p + p {
 
 .product-description {
   margin-top: 0.6rem;
+  color: var(--color-muted);
   font-size: 0.88rem;
+  line-height: 1.7;
   max-width: 430px;
 }
 
@@ -370,9 +397,50 @@ legend {
   font-size: 0.74rem;
 }
 
+.size-guide {
+  margin-top: 1rem;
+  border-block: 1px solid var(--color-line);
+}
+
+.size-guide summary {
+  padding-block: 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.size-guide summary:focus-visible {
+  outline: 3px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+.size-guide-content {
+  max-width: 34rem;
+  padding: 0 0 0.85rem;
+  color: var(--color-muted);
+  font-size: 0.74rem;
+  line-height: 1.65;
+}
+
+.size-guide-content p {
+  margin: 0.25rem 0 0.65rem;
+}
+
+.size-guide-content ol {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.size-guide-content .size-guide-note {
+  margin-top: 0.8rem;
+  color: var(--color-ink);
+}
+
 .size-options {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(2.8rem, 3.5rem));
   gap: 0.6rem;
   margin-top: 1rem;
 }
@@ -395,6 +463,8 @@ legend {
   display: grid;
   place-items: center;
   min-height: 3.2rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
   border: 1px solid var(--color-line);
   background: var(--color-paper);
   font-size: 0.83rem;
@@ -452,13 +522,15 @@ legend {
 }
 
 .button-primary {
+  border: 0;
+  border-radius: 999px;
   background: var(--color-ink);
   color: var(--color-paper);
 }
 
 .button-primary:hover {
-  background: var(--color-accent);
-  color: var(--color-ink);
+  background: #62596a;
+  color: var(--color-white);
 }
 
 .button-secondary {
@@ -468,6 +540,21 @@ legend {
 
 .button-secondary:hover {
   background: var(--color-soft);
+}
+
+.choose-size-button {
+  width: fit-content;
+  min-width: 12rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.choose-size-button:hover {
+  background: #62596a;
+  color: var(--color-white);
 }
 
 .add-button {
@@ -689,6 +776,7 @@ legend {
 .draft-label {
   display: inline-block;
   padding: 0.3rem 0.55rem;
+  border-radius: 999px;
   background: var(--color-accent);
   color: var(--color-ink);
   font-family: var(--font-mono);
@@ -734,8 +822,9 @@ legend {
   display: grid;
   place-items: center;
   padding: 3rem;
-  background: var(--color-white);
   border: 1px solid var(--color-line);
+  border-radius: 1.25rem;
+  background: var(--color-soft);
 }
 
 .logo-board img {
@@ -760,6 +849,8 @@ legend {
 
 .logo-variant + .logo-variant {
   border-left: 1px solid var(--color-line);
+  background: var(--color-ink);
+  color: var(--color-paper);
 }
 
 .logo-small {
@@ -769,18 +860,18 @@ legend {
 
 .logo-mono {
   width: 190px;
-  filter: brightness(0);
+  filter: brightness(0) invert(1);
 }
 
 .logo-variant p,
 .guide-note {
   font-size: 0.73rem;
-  color: var(--color-muted);
 }
 
 .guide-note {
   margin-top: 1rem;
   max-width: 680px;
+  color: var(--color-muted);
 }
 
 .palette-grid {
@@ -792,6 +883,7 @@ legend {
 .color-swatch {
   height: 120px;
   border: 1px solid var(--color-line);
+  border-radius: 0.8rem;
   background: var(--swatch-color);
 }
 
@@ -893,6 +985,7 @@ legend {
 
 .button-samples .button {
   min-width: 185px;
+  border-radius: 999px;
 }
 
 .voice-grid {
@@ -913,6 +1006,7 @@ legend {
 }
 
 .voice-example {
+  font-family: var(--font-display);
   font-size: 1.7rem !important;
   color: var(--color-ink) !important;
   letter-spacing: -0.035em;
@@ -1060,12 +1154,15 @@ legend {
 
   .product-visual {
     max-width: 600px;
+    border-radius: 1.1rem;
     width: 100%;
     margin-inline: auto;
   }
 
   .shirt-image {
+    width: 88%;
     max-height: 530px;
+    margin-block: 2.5rem 1rem;
   }
 
   .product-information {
@@ -1074,8 +1171,13 @@ legend {
   }
 
   .product-information h1 {
+    max-width: 11ch;
     font-size: clamp(4.2rem, 13vw, 7rem);
     margin-top: 1rem;
+  }
+
+  .choose-size-button {
+    width: 100%;
   }
 
   .product-intro {
